@@ -1,0 +1,11 @@
+# OS / Editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Local helpers / extracts
+_pdf_extract.txt
+*.log

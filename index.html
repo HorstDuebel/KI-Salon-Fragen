@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KI-Salon – Interviewbogen für Interessierte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="hero" id="hero">
+      <p class="hero-brand">KI-Salon</p>
+      <h1 class="hero-title">Interviewbogen für Interessierte</h1>
+      <p class="hero-intro">
+        Wir führen den kuratierten KI-Salon ein. Wir freuen uns über dein Interesse und möchten dich näher kennenlernen,
+        damit wir eine Gruppe zusammenstellen können, die zueinander passt und in der sich jeder öffnen kann.
+      </p>
+    </header>
+
+    <div id="form-status" class="form-status" role="status" aria-live="polite" hidden></div>
+
+    <form id="interview-form" class="interview-form" novalidate>
+      <!-- PERSÖNLICHE ANGABEN -->
+      <section class="section" aria-labelledby="sec-persoenlich">
+        <h2 id="sec-persoenlich" class="section-eyebrow">Persönliche Angaben</h2>
+
+        <div class="field-grid">
+          <div class="field">
+            <label for="vorname">Vorname <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="vorname" name="vorname" required aria-required="true" autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="name">Name <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" required aria-required="true" autocomplete="family-name">
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="telefon">Telefon</label>
+            <input type="tel" id="telefon" name="telefon" autocomplete="tel">
+          </div>
+          <div class="field field-span-2">
+            <label for="unternehmen_branche">Unternehmen / Branche <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="unternehmen_branche" name="unternehmen_branche" required aria-required="true">
+          </div>
+          <div class="field">
+            <label for="land">Land <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="land" name="land" required aria-required="true" autocomplete="country-name">
+          </div>
+          <div class="field">
+            <label for="wohnsitz">Wohnsitz</label>
+            <input type="text" id="wohnsitz" name="wohnsitz" autocomplete="address-level2">
+          </div>
+          <div class="field field-span-2">
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" autocomplete="street-address">
+          </div>
+          <div class="field">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" inputmode="url" placeholder="https://…">
+          </div>
+          <div class="field">
+            <label for="linkedin">LinkedIn</label>
+            <input type="text" id="linkedin" name="linkedin" inputmode="url" placeholder="https://…">
+          </div>
+        </div>
+      </section>
+
+      <!-- MOTIVATION UND ERWARTUNGEN -->
+      <section class="section" aria-labelledby="sec-motivation">
+        <h2 id="sec-motivation" class="section-eyebrow">Motivation und Erwartungen</h2>
+
+        <div class="field">
+          <label for="motivation_warum">Warum interessierst Du Dich für den KI-Salon?</label>
+          <p class="hint">→ Gute Antworten: „Ich will KI einordnen, bevor ich handle“, „Ich suche Austausch mit Gleichgesinnten“ / Schlechte Antworten: „Ich will wissen, welches Tool ich nutzen soll“</p>
+          <textarea id="motivation_warum" name="motivation_warum" rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="motivation_herausforderungen">Was sind Deine konkreten Fragen oder Herausforderungen im Umgang mit KI in Deinem Unternehmen?</label>
+          <p class="hint">→ Zeigt, ob die Person reflektiert oder nur lösungsorientiert ist.</p>
+          <textarea id="motivation_herausforderungen" name="motivation_herausforderungen" rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="motivation_erfolg">Was wäre für Dich ein erfolgreicher Ausgang des Salons?</label>
+          <p class="hint">→ Gute Antworten: „Klarheit für meine nächsten Schritte“, „Ein Netzwerk aus Menschen, die KI ähnlich sehen“ / Schlechte: „Eine Liste mit Tools“</p>
+          <textarea id="motivation_erfolg" name="motivation_erfolg" rows="4"></textarea>
+        </div>
+
+        <fieldset class="field scale-field">
+          <legend>Wie wichtig ist Dir der Austausch mit anderen im Vergleich zu Fachwissen?</legend>
+          <p class="hint">Skala: 1 = „Ich will nur Fakten“ / 10 = „Mir geht es um den Dialog“ → Ideal: 8 bis 10</p>
+          <div class="scale" role="radiogroup" aria-label="Austausch vs. Fachwissen, Skala 1 bis 10">
+            <label class="scale-option"><input type="radio" name="skala_austausch" value="1"><span>1</span></label>
+            <label class="scale-option"><input type="radio" name="skala_austausch" value="2"><span>2</span></label>
+            <label class="scale-option"><input type="radio" name="skala_austausch" value="3"><span>3</span></label>
+            <label class="scale-option"><input type="radio" name="skala_austausch" value="4"><span>4</span></label>
+            <label class="scale-option"><input type="radio" name="skala_austausch" value="5"><span>5</span></label>
+            <label class="scale-option"><input type="radio" name="skala_austausch" value="6"><span>6</span></label>
+            <label class="scale-option"><input type="radio" name="skala_austausch" value="7"><span>7</span></label>
+            <label class="scale-option"><input type="radio" name="skala_austausch" value="8"><span>8</span></label>
+            <label class="scale-option"><input type="radio" name="skala_austausch" value="9"><span>9</span></label>
+            <label class="scale-option"><input type="radio" name="skala_austausch" value="10"><span>10</span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- HALTUNG ZU KI -->
+      <section class="section" aria-labelledby="sec-haltung">
+        <h2 id="sec-haltung" class="section-eyebrow">Haltung zu KI</h2>
+        <p class="section-note">Hier prüfen wir, ob die Person KI als kulturelle Herausforderung sieht, nicht nur als Tool.</p>
+
+        <div class="field">
+          <label for="haltung_beschreibung">Wie würdest Du Deine aktuelle Haltung zu KI beschreiben?</label>
+          <p class="hint">→ Gute Antworten: „Ambivalent“, „Neugierig, aber mit Bedenken“, „Ich sehe Chancen und Risiken“ / Schlechte: „KI ist nur ein Werkzeug“, „Ich will endlich loslegen“</p>
+          <textarea id="haltung_beschreibung" name="haltung_beschreibung" rows="4"></textarea>
+        </div>
+
+        <fieldset class="field">
+          <legend>Siehst Du KI eher als …?</legend>
+          <p class="hint">→ Ideal: „Strategische Chance“ + „Kulturelle Herausforderung“</p>
+          <div class="choice-list">
+            <label class="choice">
+              <input type="checkbox" name="ki_als" value="technisches_tool">
+              <span>Technisches Tool</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="ki_als" value="strategische_chance">
+              <span>Strategische Chance</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="ki_als" value="kulturelle_herausforderung">
+              <span>Kulturelle Herausforderung</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="ki_als" value="notwendiges_uebel">
+              <span>Notwendiges Übel</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="haltung_ethik">Gibt es ethische oder menschliche Bedenken, die Dich bei KI beschäftigen? Wenn ja, welche?</label>
+          <p class="hint">→ Gute Antworten: „Datenschutz“, „Auswirkungen auf Mitarbeitende“, „Verantwortung“ / Schlechte: „Nein, ich sehe nur Vorteile“</p>
+          <textarea id="haltung_ethik" name="haltung_ethik" rows="4"></textarea>
+        </div>
+      </section>
+
+      <!-- ERFAHRUNG UND KONTEXT -->
+      <section class="section" aria-labelledby="sec-erfahrung">
+        <h2 id="sec-erfahrung" class="section-eyebrow">Deine Erfahrung und Dein Kontext</h2>
+        <p class="section-note">Hier geht es um Realismus: Passen die Person und ihr Umfeld zum Salon?</p>
+
+        <div class="field">
+          <label for="rolle">Welche Rolle hast Du in Deinem Unternehmen?</label>
+          <p class="hint">→ Ideal: Geschäftsführung, Bereichsleitung, Personalverantwortliche, Transformationsbeauftragte</p>
+          <input type="text" id="rolle" name="rolle">
+        </div>
+
+        <div class="field">
+          <label for="mitarbeitende">Wie viele Mitarbeitende hat Dein Unternehmen?</label>
+          <p class="hint">→ Zielgruppe: KMU, 10 bis 500 Mitarbeitende, Familienunternehmen, soziale Einrichtungen. Keine Startups oder Großkonzerne, die nur „Skalierung“ im Kopf haben.</p>
+          <input type="text" id="mitarbeitende" name="mitarbeitende" placeholder="z. B. 45 oder 10–50">
+        </div>
+
+        <div class="field">
+          <label for="erfahrung_ki">Hast Du bereits Erfahrungen mit KI im Unternehmen gesammelt? Wenn ja, welche?</label>
+          <p class="hint">→ Nicht entscheidend, aber: Keine Erfahrung ist okay, „Ich habe schon 10 Tools ausprobiert“ könnte auf Tool-Fokus hindeuten.</p>
+          <textarea id="erfahrung_ki" name="erfahrung_ki" rows="4"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="erfahrung_formate">Hast Du bereits an ähnlichen Formaten teilgenommen, zum Beispiel Masterminds oder Peer-Groups? Wie war Deine Erfahrung?</label>
+          <p class="hint">→ Gute Antworten: „Ich schätze den vertrauensvollen Austausch“, „Ich habe dort viel gelernt“ / Schlechte: „Ich war noch nie in so etwas“ und keine Bereitschaft, sich zu öffnen.</p>
+          <textarea id="erfahrung_formate" name="erfahrung_formate" rows="4"></textarea>
+        </div>
+      </section>
+
+      <!-- PASSUNG ZUR GRUPPE -->
+      <section class="section" aria-labelledby="sec-passung">
+        <h2 id="sec-passung" class="section-eyebrow">Deine Passung zur Gruppe</h2>
+        <p class="section-note">Hier prüfen wir Vertraulichkeit, Offenheit und Gruppendynamik.</p>
+
+        <div class="field">
+          <label for="passung_ambivalenz">Wie gehst Du typischerweise mit Ambivalenz oder Unsicherheit um?</label>
+          <p class="hint">→ Gute Antworten: „Ich suche Austausch mit Vertrauten“, „Ich reflektiere erst, bevor ich handle“ / Schlechte: „Ich ignoriere Zweifel und mache einfach“</p>
+          <textarea id="passung_ambivalenz" name="passung_ambivalenz" rows="4"></textarea>
+        </div>
+
+        <fieldset class="field">
+          <legend>Bist Du bereit, Dich in einer kleinen, vertraulichen Gruppe zu öffnen und eigene Herausforderungen zu teilen?</legend>
+          <p class="hint">→ Ausschlusskriterium: „Nein“ oder „Nur, wenn es um Fakten geht“.</p>
+          <div class="choice-list choice-list-inline">
+            <label class="choice">
+              <input type="radio" name="passung_oeffnen" value="ja">
+              <span>Ja</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="passung_oeffnen" value="nein">
+              <span>Nein</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field scale-field">
+          <legend>Wie wichtig ist Dir Vertraulichkeit in so einem Setting?</legend>
+          <p class="hint">Skala: 1 = „egal“ / 10 = „absolut essenziell“ → Ideal: 9 bis 10</p>
+          <div class="scale" role="radiogroup" aria-label="Vertraulichkeit, Skala 1 bis 10">
+            <label class="scale-option"><input type="radio" name="skala_vertraulichkeit" value="1"><span>1</span></label>
+            <label class="scale-option"><input type="radio" name="skala_vertraulichkeit" value="2"><span>2</span></label>
+            <label class="scale-option"><input type="radio" name="skala_vertraulichkeit" value="3"><span>3</span></label>
+            <label class="scale-option"><input type="radio" name="skala_vertraulichkeit" value="4"><span>4</span></label>
+            <label class="scale-option"><input type="radio" name="skala_vertraulichkeit" value="5"><span>5</span></label>
+            <label class="scale-option"><input type="radio" name="skala_vertraulichkeit" value="6"><span>6</span></label>
+            <label class="scale-option"><input type="radio" name="skala_vertraulichkeit" value="7"><span>7</span></label>
+            <label class="scale-option"><input type="radio" name="skala_vertraulichkeit" value="8"><span>8</span></label>
+            <label class="scale-option"><input type="radio" name="skala_vertraulichkeit" value="9"><span>9</span></label>
+            <label class="scale-option"><input type="radio" name="skala_vertraulichkeit" value="10"><span>10</span></label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="passung_meinungen">Wie gehst Du mit unterschiedlichen Meinungen in einer Gruppe um?</label>
+          <p class="hint">→ Gute Antworten: „Ich höre zu und reflektiere“, „Ich schätze andere Perspektiven“ / Schlechte: „Ich überzeuge andere von meiner Meinung“</p>
+          <textarea id="passung_meinungen" name="passung_meinungen" rows="4"></textarea>
+        </div>
+      </section>
+
+      <!-- PRAKTISCHE RAHMENDATEN -->
+      <section class="section" aria-labelledby="sec-praktisch">
+        <h2 id="sec-praktisch" class="section-eyebrow">Praktische Rahmendaten</h2>
+        <p class="section-note">Hier klären wir Verbindlichkeit und Logistik.</p>
+
+        <fieldset class="field">
+          <legend>Kannst Du Dich verbindlich für 6 Monate, 6 Sessions à 90 Minuten, verpflichten?</legend>
+          <p class="hint">→ Ausschlusskriterium: „Ich schau mal, ob ich Zeit habe“.</p>
+          <div class="choice-list choice-list-inline">
+            <label class="choice">
+              <input type="radio" name="verbindlich_6_monate" value="ja">
+              <span>Ja</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="verbindlich_6_monate" value="nein">
+              <span>Nein</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Kannst Du mindestens 4× in Präsenz in Darmstadt teilnehmen?</legend>
+          <p class="hint">→ Ausschlusskriterium: „Ich kann nur online“, es sei denn, es gibt Ausnahmen.</p>
+          <div class="choice-list choice-list-inline">
+            <label class="choice">
+              <input type="radio" name="praesenz_darmstadt" value="ja">
+              <span>Ja</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="praesenz_darmstadt" value="nein">
+              <span>Nein</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="budget">Was ist Dein Budget für dieses Format?</label>
+          <p class="hint">→ Optional, aber hilfreich, um Preis-Passung zu prüfen. Ideal: 500 bis 1.500 Euro.</p>
+          <input type="text" id="budget" name="budget" placeholder="z. B. 800 Euro">
+        </div>
+
+        <div class="field">
+          <label for="sonstiges">Was möchtest Du uns noch mitteilen?</label>
+          <textarea id="sonstiges" name="sonstiges" rows="4"></textarea>
+        </div>
+      </section>
+
+      <!-- DATENSCHUTZ -->
+      <section class="section privacy-box" aria-labelledby="sec-datenschutz">
+        <h2 id="sec-datenschutz" class="privacy-title">Datenschutzvereinbarung <span class="required" aria-hidden="true">*</span></h2>
+        <p class="privacy-text">
+          Ich willige in die Verarbeitung und Weitergabe meiner Daten gemäß der Datenschutzerklärung ein.
+          Ein Widerruf ist jederzeit durch Kontakt mit einer der in der Datenschutzerklärung genannten
+          verantwortlichen Personen möglich.
+        </p>
+        <label class="choice privacy-check">
+          <input type="checkbox" id="datenschutz" name="datenschutz" value="ja" required aria-required="true">
+          <span>Gelesen und einverstanden <span class="required" aria-hidden="true">*</span></span>
+        </label>
+      </section>
+
+      <div class="submit-row">
+        <p class="draft-hint" id="draft-hint" aria-live="polite">Deine Eingaben werden automatisch auf diesem Gerät zwischengespeichert.</p>
+        <button type="submit" class="btn-submit" id="submit-btn">Fragebogen absenden</button>
+      </div>
+    </form>
+
+    <section id="success" class="success-box" hidden>
+      <h2 class="success-title">Geschafft!</h2>
+      <p class="success-text">Dankeschön für deinen Input.</p>
+      <p class="success-text">
+        Jetzt kann es eine Weile dauern, bis wir uns bei dir melden.
+        Wenn du zwischendurch Fragen hast, melde dich gern bei uns.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-person">
+        <strong>Susanne Volkwein</strong>
+        <span>Systemische Coachin und KI-Managerin</span>
+        <a href="mailto:Susanne@SusanneVolkwein.de">Susanne@SusanneVolkwein.de</a>
+        <a href="tel:+491794587680">0179 4587680</a>
+      </div>
+      <div class="footer-person">
+        <strong>Frank Vullhorst</strong>
+        <span>ki: sicher strategisch sinnvoll</span>
+        <a href="mailto:Frank@FrankVullhorst.de">Frank@FrankVullhorst.de</a>
+        <a href="tel:+491726689960">0172 6689960</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/form-persist.js"></script>
+  <script src="js/form-collect.js"></script>
+  <script src="js/form-validate.js"></script>
+  <script src="js/submit.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById("interview-form");
+      var success = document.getElementById("success");
+      var statusEl = document.getElementById("form-status");
+      var submitBtn = document.getElementById("submit-btn");
+      var draftHint = document.getElementById("draft-hint");
+
+      FormPersist.init(form, {
+        onSaved: function () {
+          if (draftHint) {
+            draftHint.textContent = "Zwischengespeichert auf diesem Gerät.";
+          }
+        }
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        statusEl.hidden = true;
+        statusEl.textContent = "";
+        statusEl.className = "form-status";
+
+        var validation = FormValidate.validate(form);
+        if (!validation.ok) {
+          statusEl.hidden = false;
+          statusEl.className = "form-status form-status-error";
+          statusEl.textContent = validation.message;
+          if (validation.focusEl) {
+            validation.focusEl.focus();
+          }
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Wird gesendet…";
+
+        var payload = FormCollect.collect(form);
+
+        FormSubmit.submitAnswers(payload)
+          .then(function () {
+            FormPersist.clear();
+            form.hidden = true;
+            success.hidden = false;
+            success.scrollIntoView({ behavior: "smooth", block: "start" });
+            statusEl.hidden = true;
+          })
+          .catch(function (err) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Fragebogen absenden";
+            statusEl.hidden = false;
+            statusEl.className = "form-status form-status-error";
+            statusEl.textContent =
+              (err && err.message) ||
+              "Senden fehlgeschlagen. Bitte später erneut versuchen oder uns per E-Mail kontaktieren.";
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
