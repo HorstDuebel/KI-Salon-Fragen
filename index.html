@@ -22,7 +22,19 @@
 
     <div id="form-status" class="form-status" role="status" aria-live="polite" hidden></div>
 
-    <form id="interview-form" class="interview-form" novalidate>
+    <form
+      id="interview-form"
+      class="interview-form"
+      name="interviewbogen"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      novalidate
+    >
+      <input type="hidden" name="form-name" value="interviewbogen">
+      <p class="visually-hidden" aria-hidden="true">
+        <label>Nicht ausfüllen: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+      </p>
       <!-- PERSÖNLICHE ANGABEN -->
       <section class="section" aria-labelledby="sec-persoenlich">
         <h2 id="sec-persoenlich" class="section-eyebrow">Persönliche Angaben</h2>

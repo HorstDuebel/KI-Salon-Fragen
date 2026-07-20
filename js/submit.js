@@ -1,56 +1,53 @@
 /**
  * Versand-Adapter – EINZIGER Ort für die Submit-Logik.
  *
- * Aktuell: Formspree.
- * Endpoint in FORMSPREE_ENDPOINT eintragen (z. B. https://formspree.io/f/xxxxxxxx).
- * Solange der Platzhalter steht, läuft ein lokaler Demo-Modus (kein echter Versand),
- * damit die Seite ohne Account testbar bleibt.
+ * Aktuell: Netlify Forms (Hosting auf Netlify).
+ * Einsendungen erscheinen unter Site → Forms.
+ * E-Mail-Benachrichtigungen in Netlify einrichten
+ * (z. B. Susanne@SusanneVolkwein.de und Frank@FrankVullhorst.de).
  *
- * Andere Backends: nur diese Datei anpassen. HTML/CSS unverändert lassen.
+ * Andere Backends: nur diese Datei anpassen. HTML/CSS möglichst unverändert lassen
+ * (Netlify braucht data-netlify am Formular; das kann bei einem Wechsel entfernt werden).
  * Erwartete Signatur: submitAnswers(payload) → Promise
  * payload = { meta: {...}, answers: {...} } von FormCollect.collect()
  */
 var FormSubmit = (function () {
-  // <<< Hier Formspree-Form-ID eintragen >>>
-  var FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+  var FORM_NAME = "interviewbogen";
 
-  var isConfigured =
-    FORMSPREE_ENDPOINT.indexOf("YOUR_FORM_ID") === -1 &&
-    FORMSPREE_ENDPOINT.indexOf("formspree.io") !== -1;
+  /** true = auf Netlify absenden; false = nur lokaler Demo-Modus */
+  var USE_NETLIFY = true;
 
-  function submitViaFormspree(payload) {
-    var body = FormCollect.flatten(payload);
-    // Zusätzlich volles JSON für flexible Auswertung
-    body._payload_json = JSON.stringify(payload);
+  function isLocalFile() {
+    return window.location.protocol === "file:";
+  }
 
-    return fetch(FORMSPREE_ENDPOINT, {
+  function submitViaNetlify(payload) {
+    var flat = FormCollect.flatten(payload);
+    flat["form-name"] = FORM_NAME;
+    flat["bot-field"] = "";
+    flat._payload_json = JSON.stringify(payload);
+
+    var body = new URLSearchParams();
+    var keys = Object.keys(flat);
+    for (var i = 0; i < keys.length; i++) {
+      var k = keys[i];
+      var v = flat[k];
+      body.append(k, v == null ? "" : String(v));
+    }
+
+    return fetch("/", {
       method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body.toString()
     }).then(function (res) {
-      if (res.ok) return res.json().catch(function () {
-        return {};
-      });
-      return res.json().catch(function () {
-        return {};
-      }).then(function (data) {
-        var msg =
-          (data && data.error) ||
-          (data && data.errors && data.errors.map(function (e) {
-            return e.message;
-          }).join(" ")) ||
-          "Server antwortete mit Status " + res.status;
-        throw new Error(msg);
-      });
+      if (res.ok) return {};
+      throw new Error("Netlify Forms antwortete mit Status " + res.status);
     });
   }
 
   /**
-   * Demo ohne konfigurierten Endpoint: speichert die letzte Einsendung lokal
-   * (nur zum Testen; keine zentrale Auswertung).
+   * Demo lokal (file:// oder USE_NETLIFY = false):
+   * speichert die letzte Einsendung nur im Browser.
    */
   function submitDemo(payload) {
     return new Promise(function (resolve) {
@@ -62,20 +59,20 @@ var FormSubmit = (function () {
       } catch (e) {
         /* ignore */
       }
-      console.info("[KI-Salon] Demo-Submit (kein Formspree-Endpoint gesetzt):", payload);
+      console.info("[KI-Salon] Demo-Submit (kein Netlify-Versand):", payload);
       setTimeout(resolve, 350);
     });
   }
 
   function submitAnswers(payload) {
-    if (isConfigured) {
-      return submitViaFormspree(payload);
+    if (USE_NETLIFY && !isLocalFile()) {
+      return submitViaNetlify(payload);
     }
     return submitDemo(payload);
   }
 
   return {
     submitAnswers: submitAnswers,
-    isConfigured: isConfigured
+    isConfigured: USE_NETLIFY
   };
 })();
