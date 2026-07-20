@@ -478,6 +478,18 @@ textarea.field-invalid {
     margin-bottom: 1.5rem;
   }
 
+  .hero-flyer {
+    top: 0.75rem;
+    right: 0.75rem;
+    min-height: 36px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.88rem;
+  }
+
+  .hero-brand {
+    padding-right: 4.75rem;
+  }
+
   .field-grid {
     grid-template-columns: 1fr;
   }
