@@ -3,7 +3,7 @@
  * Key ist versionsiert, damit alte Entwürfe bei Schema-Änderungen ignoriert werden können.
  */
 var FormPersist = (function () {
-  var STORAGE_KEY = "ki-salon-fragebogen-v1";
+  var STORAGE_KEY = "ki-salon-fragebogen-v2";
   var DEBOUNCE_MS = 400;
   var formEl = null;
   var timer = null;
@@ -37,8 +37,8 @@ var FormPersist = (function () {
     }
 
     // Einzel-Checkbox (Datenschutz): als Bool speichern, falls nur ein Wert
-    if (Array.isArray(data.datenschutz)) {
-      data.datenschutz = data.datenschutz.indexOf("ja") !== -1;
+    if (Array.isArray(data.datenschutz_einwilligung)) {
+      data.datenschutz_einwilligung = data.datenschutz_einwilligung.indexOf("ja") !== -1;
     }
 
     return data;
@@ -119,8 +119,10 @@ var FormPersist = (function () {
   function init(form, options) {
     formEl = form;
     onSaved = options && options.onSaved;
+    var onLoaded = options && options.onLoaded;
 
     load();
+    if (typeof onLoaded === "function") onLoaded();
 
     form.addEventListener("input", scheduleSave);
     form.addEventListener("change", scheduleSave);

@@ -64,6 +64,7 @@ body {
   margin-bottom: 2rem;
 }
 
+.hero-action,
 .hero-flyer {
   position: absolute;
   top: 1rem;
@@ -84,10 +85,12 @@ body {
   transition: background 0.15s ease, transform 0.1s ease;
 }
 
+.hero-action:hover,
 .hero-flyer:hover {
   background: var(--color-white);
 }
 
+.hero-action:focus-visible,
 .hero-flyer:focus-visible {
   outline: 3px solid rgba(214, 228, 240, 0.85);
   outline-offset: 2px;
@@ -111,10 +114,29 @@ body {
 
 .hero-intro {
   margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.55;
+  font-size: clamp(1.05rem, 2.4vw, 1.12rem);
+  line-height: 1.52;
   opacity: 0.95;
+  max-width: 100%;
+}
+
+.hero-offline-hint {
+  margin: 0.85rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  opacity: 0.9;
   max-width: 42em;
+}
+
+.hero-offline-hint a {
+  color: var(--color-box-mid);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.hero-offline-hint a:hover {
+  color: var(--color-white);
 }
 
 /* Status */
@@ -137,12 +159,13 @@ body {
 }
 
 .section-eyebrow {
-  margin: 0 0 1rem;
-  font-size: 0.8rem;
+  margin: 0 0 1.15rem;
+  font-size: clamp(1.1rem, 2.8vw, 1.25rem);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-blue);
+  line-height: 1.25;
 }
 
 .section-note {
@@ -252,24 +275,24 @@ textarea.field-invalid {
 .choice-list {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.15rem;
 }
 
 .choice-list-inline {
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
+  gap: 0.4rem 1rem;
 }
 
 .choice {
   display: flex;
   align-items: flex-start;
-  gap: 0.65rem;
+  gap: 0.5rem;
   font-weight: 400;
   color: var(--color-text);
   cursor: pointer;
-  min-height: 44px;
-  padding: 0.35rem 0;
+  min-height: 36px;
+  padding: 0.1rem 0;
 }
 
 .choice input {
@@ -282,6 +305,73 @@ textarea.field-invalid {
 
 .choice span {
   line-height: 1.4;
+}
+
+.choice-with-input {
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.choice-input-row {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.choice-input-label {
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.choice-with-input .choice-input {
+  flex: 1 1 14rem;
+  min-width: 10rem;
+  max-width: 100%;
+  margin-top: 0;
+  min-height: 34px;
+  padding: 0.25rem 0.35rem 0.15rem;
+  border: 0;
+  border-bottom: 2px solid var(--color-navy);
+  border-radius: 0;
+  background: var(--color-white);
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.choice-with-input .choice-input::placeholder {
+  color: transparent;
+}
+
+.choice-with-input .choice-input:focus {
+  outline: none;
+  border-bottom-color: var(--color-blue);
+  box-shadow: none;
+}
+
+.choice-with-input .choice-input:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.65);
+  border-bottom-color: var(--color-border);
+  color: var(--color-hint);
+}
+
+.choice-with-input .choice-input:not(:disabled) {
+  background: var(--color-white);
+  border-bottom-color: var(--color-navy);
+  cursor: text;
+}
+
+.choice-input.field-invalid {
+  border-bottom-color: var(--color-required);
+}
+
+.choice-list-stacked-mobile {
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 /* Scale 1–10 */
@@ -358,11 +448,42 @@ textarea.field-invalid {
   line-height: 1.5;
 }
 
+.privacy-text a {
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
 .privacy-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
   background: var(--color-box-light);
-  padding: 0.75rem 0.85rem;
+  padding: 0.85rem 1rem;
   border-radius: var(--radius);
   margin: 0;
+}
+
+.privacy-check-label {
+  flex: 0 1 auto;
+  margin: 0;
+  min-height: auto;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.privacy-check-label span {
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.privacy-check .draft-hint {
+  flex: 0 1 52%;
+  margin: 0 0 0 auto;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--color-hint);
+  text-align: right;
 }
 
 /* Submit */
@@ -378,6 +499,12 @@ textarea.field-invalid {
   margin: 0;
   font-size: 0.88rem;
   color: var(--color-hint);
+}
+
+.closing-hint {
+  margin: 0;
+  font-size: 0.96rem;
+  color: var(--color-navy);
 }
 
 .btn-submit {
@@ -467,6 +594,49 @@ textarea.field-invalid {
   text-decoration: underline;
 }
 
+.footer-legal {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-legal a {
+  color: var(--color-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}
+
+.legal-content {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.legal-content h2 {
+  margin-top: 0;
+  color: var(--color-navy);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--color-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
 /* Mobile */
 @media (max-width: 600px) {
   .page {
@@ -478,6 +648,7 @@ textarea.field-invalid {
     margin-bottom: 1.5rem;
   }
 
+  .hero-action,
   .hero-flyer {
     top: 0.75rem;
     right: 0.75rem;
@@ -488,6 +659,10 @@ textarea.field-invalid {
 
   .hero-brand {
     padding-right: 4.75rem;
+  }
+
+  .hero-offline-hint {
+    font-size: 0.85rem;
   }
 
   .field-grid {
@@ -512,8 +687,43 @@ textarea.field-invalid {
     padding: 1.15rem 1rem;
   }
 
+  .privacy-check {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .privacy-check-label {
+    white-space: normal;
+  }
+
+  .privacy-check .draft-hint {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-left: 0;
+    padding-left: 1.65rem;
+    text-align: left;
+  }
+
   .footer {
     flex-direction: column;
     gap: 1.25rem;
+  }
+
+  .choice-list-stacked-mobile {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .choice-with-input {
+    flex-wrap: wrap;
+  }
+
+  .choice-input-row {
+    flex: 1 1 100%;
+    padding-left: 1.65rem;
+  }
+
+  .choice-with-input .choice-input {
+    min-width: 100%;
   }
 }

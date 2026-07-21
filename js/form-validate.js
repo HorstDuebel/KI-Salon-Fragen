@@ -25,6 +25,14 @@ var FormValidate = (function () {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
+  function isChecked(form, name, value) {
+    var nodes = form.querySelectorAll('input[name="' + name + '"]');
+    for (var i = 0; i < nodes.length; i++) {
+      if (nodes[i].checked && nodes[i].value === value) return true;
+    }
+    return false;
+  }
+
   function validate(form) {
     clearInvalid(form);
 
@@ -52,7 +60,44 @@ var FormValidate = (function () {
       }
     }
 
-    var ds = form.elements.namedItem("datenschutz");
+    if (isChecked(form, "ki_als", "etwas_ganz_anderes")) {
+      var kiAnders = form.elements.namedItem("ki_als_anders");
+      var kiAndersValue = kiAnders && kiAnders.value ? String(kiAnders.value).trim() : "";
+      if (!kiAndersValue) {
+        markInvalid(kiAnders);
+        return {
+          ok: false,
+          message: "Bitte gib an, was Du unter „etwas ganz anderes“ meinst.",
+          focusEl: kiAnders
+        };
+      }
+    }
+
+    var erfahrungStufe = form.elements.namedItem("erfahrung_ki_stufe");
+    var erfahrungSelected = "";
+    if (erfahrungStufe && typeof erfahrungStufe.length === "number") {
+      for (var r = 0; r < erfahrungStufe.length; r++) {
+        if (erfahrungStufe[r].checked) {
+          erfahrungSelected = erfahrungStufe[r].value;
+          break;
+        }
+      }
+    }
+
+    if (erfahrungSelected === "teil_prozesse") {
+      var prozesse = form.elements.namedItem("erfahrung_ki_prozesse");
+      var prozesseValue = prozesse && prozesse.value ? String(prozesse.value).trim() : "";
+      if (!prozesseValue) {
+        markInvalid(prozesse);
+        return {
+          ok: false,
+          message: "Bitte gib an, in welchen Prozessen KI bereits eingesetzt wird.",
+          focusEl: prozesse
+        };
+      }
+    }
+
+    var ds = form.elements.namedItem("datenschutz_einwilligung");
     if (!ds || !ds.checked) {
       return {
         ok: false,

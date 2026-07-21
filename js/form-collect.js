@@ -3,7 +3,7 @@
  * Meta + flaches answers-Objekt mit stabilen Feld-IDs.
  */
 var FormCollect = (function () {
-  var FORM_VERSION = "1.0.0";
+  var FORM_VERSION = "2.0.0";
 
   var TEXT_FIELDS = [
     "vorname",
@@ -17,22 +17,23 @@ var FormCollect = (function () {
     "website",
     "linkedin",
     "motivation_warum",
-    "motivation_herausforderungen",
-    "motivation_erfolg",
+    "motivation_zeitpunkt_herausforderungen",
     "haltung_beschreibung",
     "haltung_ethik",
     "rolle",
     "mitarbeitende",
-    "erfahrung_ki",
+    "ki_als_anders",
+    "erfahrung_ki_prozesse",
     "erfahrung_formate",
     "passung_ambivalenz",
     "passung_meinungen",
-    "budget",
-    "sonstiges"
+    "sonstiges",
+    "datenschutz_zeitpunkt"
   ];
 
   var RADIO_FIELDS = [
     "skala_austausch",
+    "erfahrung_ki_stufe",
     "passung_oeffnen",
     "skala_vertraulichkeit",
     "verbindlich_6_monate",
@@ -79,9 +80,9 @@ var FormCollect = (function () {
     }
 
     answers.ki_als = checkboxValues(form, "ki_als");
-    answers.datenschutz = form.elements.namedItem("datenschutz")
-      ? !!form.elements.namedItem("datenschutz").checked
-      : false;
+    answers.datenschutz_einwilligung = form.elements.namedItem("datenschutz_einwilligung")
+      ? (form.elements.namedItem("datenschutz_einwilligung").checked ? "ja" : "")
+      : "";
 
     return {
       meta: {
