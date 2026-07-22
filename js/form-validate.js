@@ -7,6 +7,8 @@ var FormValidate = (function () {
     { name: "name", label: "Name" },
     { name: "email", label: "Email" },
     { name: "unternehmen_branche", label: "Unternehmen / Branche" },
+    { name: "strasse", label: "Straße" },
+    { name: "plz_wohnort", label: "PLZ und Wohnort" },
     { name: "land", label: "Land" }
   ];
 

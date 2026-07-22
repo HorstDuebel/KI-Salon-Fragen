@@ -3,7 +3,7 @@
  * Meta + flaches answers-Objekt mit stabilen Feld-IDs.
  */
 var FormCollect = (function () {
-  var FORM_VERSION = "2.0.0";
+  var FORM_VERSION = "2.1.0";
 
   var TEXT_FIELDS = [
     "vorname",
@@ -11,9 +11,9 @@ var FormCollect = (function () {
     "email",
     "telefon",
     "unternehmen_branche",
+    "strasse",
+    "plz_wohnort",
     "land",
-    "wohnsitz",
-    "adresse",
     "website",
     "linkedin",
     "motivation_warum",
