@@ -432,6 +432,70 @@ textarea.field-invalid {
   color: var(--color-white);
 }
 
+/* Terminfindung */
+.termin-section {
+  background: var(--color-box-light);
+  padding: 1.35rem 1.25rem 1.25rem;
+  border-radius: var(--radius);
+  margin-bottom: 2.25rem;
+}
+
+.termin-intro {
+  margin-top: 0;
+}
+
+.termin-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.termin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.termin-table th,
+.termin-table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.termin-table th {
+  font-weight: 700;
+  color: var(--color-navy);
+  background: var(--color-box-mid);
+}
+
+.termin-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.termin-pdf-link {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.termin-pdf-link a {
+  color: var(--color-blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.termin-pdf-link a:hover {
+  color: var(--color-navy);
+}
+
+.termin-deadline {
+  margin-bottom: 0;
+}
+
 /* Privacy box */
 .privacy-box {
   background: var(--color-box-mid);

@@ -3,7 +3,7 @@
  * Meta + flaches answers-Objekt mit stabilen Feld-IDs.
  */
 var FormCollect = (function () {
-  var FORM_VERSION = "2.1.0";
+  var FORM_VERSION = "2.2.0";
 
   var TEXT_FIELDS = [
     "vorname",
@@ -37,7 +37,8 @@ var FormCollect = (function () {
     "passung_oeffnen",
     "skala_vertraulichkeit",
     "verbindlich_6_monate",
-    "praesenz_darmstadt"
+    "praesenz_darmstadt",
+    "termin_wochentag"
   ];
 
   function valueOf(form, name) {

@@ -311,6 +311,85 @@
         </div>
       </section>
 
+      <!-- TERMINFINDUNG -->
+      <section class="section termin-section" aria-labelledby="sec-termin">
+        <h2 id="sec-termin" class="section-eyebrow">Terminfindung</h2>
+        <p class="hint termin-intro">
+          Für alle 6 Sessions stehen die Kalenderwochen fest. Damit sich die Gruppe über die sechs Monate
+          hinweg verbindlich und verlässlich verabreden kann, geben wir die Kalenderwochen vor. Den passenden
+          Wochentag stimmen wir gemeinsam mit der Gruppe ab, damit es für möglichst alle gut passt.
+        </p>
+
+        <div class="termin-table-wrap">
+          <table class="termin-table">
+            <caption class="visually-hidden">Termine der 6 KI-Salon-Sessions</caption>
+            <thead>
+              <tr>
+                <th scope="col">Session</th>
+                <th scope="col">Kalenderwoche</th>
+                <th scope="col">Zeitraum</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>KW 39 / 2026</td>
+                <td>21. bis 25. September 2026</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>KW 44 / 2026</td>
+                <td>26. bis 30. Oktober 2026</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>KW 48 / 2026</td>
+                <td>23. bis 27. November 2026</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>KW 03 / 2027</td>
+                <td>18. bis 22. Januar 2027</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>KW 07 / 2027</td>
+                <td>15. bis 19. Februar 2027</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>KW 11 / 2027</td>
+                <td>15. bis 19. März 2027</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="termin-pdf-link">
+          <a href="assets/KI-Salon_Termine.pdf" download="KI-Salon_Termine.pdf">Terminübersicht als PDF herunterladen</a>
+        </p>
+
+        <fieldset class="field">
+          <legend>Welcher feste Wochentag ist für dich der Beste für die 6 Sessions? <span class="required" aria-hidden="true">*</span></legend>
+          <p class="hint">Für den KI-Salon stehen drei Wochentage zur Auswahl.</p>
+          <div class="choice-list">
+            <label class="choice">
+              <input type="radio" name="termin_wochentag" value="montag" required aria-required="true">
+              <span>Montag</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="termin_wochentag" value="mittwoch">
+              <span>Mittwoch</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="termin_wochentag" value="donnerstag">
+              <span>Donnerstag</span>
+            </label>
+          </div>
+          <p class="hint termin-deadline">Bitte gib uns bis zum 10. September Bescheid.</p>
+        </fieldset>
+      </section>
+
       <!-- DATENSCHUTZ -->
       <section class="section privacy-box" aria-labelledby="sec-datenschutz">
         <h2 id="sec-datenschutz" class="privacy-title">Datenschutzvereinbarung <span class="required" aria-hidden="true">*</span></h2>
@@ -340,6 +419,7 @@
     <section id="success" class="success-box" hidden>
       <h2 class="success-title">Geschafft!</h2>
       <p class="success-text">Dankeschön für deinen Input.</p>
+      <p class="success-text">Deine Terminpräferenz wurde mit übermittelt.</p>
       <p class="success-text">
         Jetzt kann es eine Weile dauern, bis wir uns bei dir melden.
         Wenn du zwischendurch Fragen hast, melde dich gern bei uns.

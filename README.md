@@ -2,11 +2,13 @@
 
 Statische Webseite für den Interviewbogen von Susanne Volkwein und Frank Vullhorst. Interessierte füllen den Bogen im Browser aus; Eingaben werden lokal zwischengespeichert und beim Absenden über **Netlify Forms** gespeichert.
 
-**Formularversion:** 2.0.0 (Stand PDF 26-07-21)
+**Formularversion:** 2.2.0 (Stand PDF 26-07-21, Terminfindung 2026-08-11)
 
 ## Papierversion (PDF)
 
 Alternativ zum Online-Fragebogen kann der Bogen als PDF heruntergeladen, handschriftlich ausgefüllt und in Papierform übergeben werden (`assets/KI-Salon_Fragebogen.pdf`). Der Download-Link steht im Hinweistext unter dem Intro auf der Startseite.
+
+Die Terminübersicht mit Kalenderwochen steht separat als `assets/KI-Salon_Termine.pdf` (Download im Abschnitt „Terminfindung“ am Ende des Fragebogens).
 
 ## Dateien
 
@@ -34,7 +36,7 @@ Lokal (`file://` oder ohne Netlify) läuft ein **Demo-Modus**: Absenden zeigt �
 
 ## Zwischenspeicherung
 
-Beim Tippen und beim Verlassen der Seite: Key `ki-salon-fragebogen-v2` im Browser. Nach erfolgreichem Absenden wird der Entwurf gelöscht.
+Beim Tippen und beim Verlassen der Seite: Key `ki-salon-fragebogen-v2.2` im Browser. Nach erfolgreichem Absenden wird der Entwurf gelöscht.
 
 ## E-Mail-Benachrichtigungen (Netlify)
 
@@ -58,12 +60,12 @@ FormSubmit.submitAnswers(payload)  // → Promise
 
 `FormCollect.flatten(payload)` liefert eine flache Map (eine Spalte pro Feld).
 
-## Feldliste (Auswertung, v2)
+## Feldliste (Auswertung, v2.2)
 
 | ID | Bedeutung |
 |----|-----------|
 | `vorname`, `name`, `email`, `telefon` | Kontaktdaten |
-| `unternehmen_branche`, `land`, `wohnsitz`, `adresse`, `website`, `linkedin` | Kontext |
+| `unternehmen_branche`, `strasse`, `plz_wohnort`, `land`, `website`, `linkedin` | Kontext / Rechnungsadresse |
 | `motivation_warum` | Warum KI-Salon |
 | `motivation_zeitpunkt_herausforderungen` | Zeitpunkt + KI-Herausforderungen |
 | `skala_austausch` | 1–10 |
@@ -78,6 +80,7 @@ FormSubmit.submitAnswers(payload)  // → Promise
 | `passung_oeffnen` | ja, eher_ja, eher_nein, nein |
 | `skala_vertraulichkeit` | 1–10 |
 | `verbindlich_6_monate`, `praesenz_darmstadt` | ja/nein |
+| `termin_wochentag` | montag, mittwoch, donnerstag |
 | `sonstiges` | Sonstiges |
 | `datenschutz_einwilligung`, `datenschutz_zeitpunkt` | Einwilligung |
 

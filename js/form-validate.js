@@ -99,6 +99,26 @@ var FormValidate = (function () {
       }
     }
 
+    var terminWochentag = form.elements.namedItem("termin_wochentag");
+    var terminSelected = false;
+    if (terminWochentag && typeof terminWochentag.length === "number") {
+      for (var t = 0; t < terminWochentag.length; t++) {
+        if (terminWochentag[t].checked) {
+          terminSelected = true;
+          break;
+        }
+      }
+    }
+    if (!terminSelected) {
+      var terminFieldset = form.querySelector('input[name="termin_wochentag"]');
+      markInvalid(terminFieldset);
+      return {
+        ok: false,
+        message: "Bitte wähle deinen bevorzugten Wochentag für die 6 Sessions.",
+        focusEl: terminFieldset
+      };
+    }
+
     var ds = form.elements.namedItem("datenschutz_einwilligung");
     if (!ds || !ds.checked) {
       return {
