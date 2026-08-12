@@ -447,33 +447,127 @@ textarea.field-invalid {
 .termin-table-wrap {
   overflow-x: auto;
   margin-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
 }
 
 .termin-table {
   width: 100%;
+  min-width: 28rem;
   border-collapse: collapse;
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   background: var(--color-white);
-  border-radius: var(--radius);
-  overflow: hidden;
+  border: 1px solid var(--color-navy);
+  table-layout: fixed;
 }
 
 .termin-table th,
 .termin-table td {
-  padding: 0.6rem 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid var(--color-border);
-  vertical-align: top;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid var(--color-navy);
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
+.termin-table thead th {
+  padding: 0.35rem 0.5rem;
+  text-align: center;
+}
+
+.termin-table tbody td {
+  background: var(--color-white);
 }
 
 .termin-table th {
   font-weight: 700;
-  color: var(--color-navy);
-  background: var(--color-box-mid);
+  color: var(--color-white);
+  background: var(--color-navy);
+  text-align: center;
 }
 
-.termin-table tbody tr:last-child td {
-  border-bottom: 0;
+.termin-table th:first-child {
+  width: 14%;
+}
+
+.termin-table th:nth-child(2) {
+  width: 44%;
+}
+
+.termin-table th:nth-child(3) {
+  width: 42%;
+}
+
+.termin-session {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-navy);
+}
+
+.termin-kw {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.termin-dates {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.termin-kw-label {
+  margin-left: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-hint);
+}
+
+.termin-timeline-cell {
+  text-align: center;
+  vertical-align: middle;
+  background: var(--color-white);
+  padding: 0.35rem 0.4rem;
+}
+
+.termin-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0;
+  min-height: 100%;
+  height: 100%;
+  padding: 0.25rem 0.15rem;
+}
+
+.termin-timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.05rem;
+  line-height: 1.2;
+}
+
+.termin-timeline-label {
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+
+.termin-timeline-time {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.termin-timeline-arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 9px solid var(--color-blue);
+  opacity: 0.8;
+  margin: 0.08rem 0;
 }
 
 .termin-pdf-link {
@@ -743,6 +837,38 @@ textarea.field-invalid {
 
   .field-span-2 {
     grid-column: 1;
+  }
+
+  .termin-table {
+    font-size: 0.78rem;
+    min-width: 26rem;
+  }
+
+  .termin-table th,
+  .termin-table td {
+    padding: 0.22rem 0.4rem;
+  }
+
+  .termin-session,
+  .termin-dates,
+  .termin-kw-label {
+    font-size: 1.05rem;
+  }
+
+  .termin-kw {
+    white-space: normal;
+  }
+
+  .termin-kw-label {
+    margin-left: 0.75rem;
+  }
+
+  .termin-timeline-label {
+    font-size: 0.86rem;
+  }
+
+  .termin-timeline-time {
+    font-size: 0.95rem;
   }
 
   .scale {
