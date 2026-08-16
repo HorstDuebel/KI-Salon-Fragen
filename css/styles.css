@@ -673,6 +673,11 @@ textarea.field-invalid {
   color: var(--color-navy);
 }
 
+.closing-hint-date {
+  color: var(--color-required);
+  font-weight: 700;
+}
+
 .btn-submit {
   font-family: inherit;
   font-size: 1.05rem;
@@ -723,8 +728,13 @@ textarea.field-invalid {
   opacity: 0.95;
 }
 
-.success-text:last-child {
-  margin-bottom: 0;
+.success-save-the-date {
+  margin: 1rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ff1d1d;
+  text-align: center;
 }
 
 /* Footer */
