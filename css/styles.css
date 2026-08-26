@@ -42,6 +42,33 @@ body {
   padding: 1.25rem 1rem 3rem;
 }
 
+.partner-top {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 0.4rem auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  line-height: 0;
+}
+
+.partner-top a {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+  background: var(--color-white);
+  padding: 0.4rem 0.65rem;
+  border-radius: 0;
+}
+
+.partner-top img {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -132,10 +159,11 @@ body {
 
 .hero-offline-hint {
   margin: 0.85rem 0 0;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   line-height: 1.45;
   opacity: 0.9;
-  max-width: 42em;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .hero-offline-hint a {
@@ -147,69 +175,6 @@ body {
 
 .hero-offline-hint a:hover {
   color: var(--color-white);
-}
-
-/* Kurzinfo KI-Salon */
-.salon-info {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-left: 4px solid var(--color-navy);
-  border-radius: var(--radius);
-  padding: 1.25rem 1.35rem 1.3rem;
-  margin: 0 0 1.75rem;
-}
-
-.salon-info-claim {
-  margin: 0 0 0.55rem;
-  font-size: 1.08rem;
-  font-weight: 700;
-  color: var(--color-navy);
-  line-height: 1.3;
-}
-
-.salon-info-format {
-  margin: 0 0 0.55rem;
-  font-size: 0.98rem;
-  font-weight: 600;
-  color: var(--color-text);
-  line-height: 1.4;
-}
-
-.salon-info-venue {
-  margin: 0 0 0.85rem;
-  font-size: 0.95rem;
-  color: var(--color-text);
-  line-height: 1.45;
-}
-
-.salon-info-prices {
-  margin: 0 0 0.85rem;
-  padding-left: 1.15rem;
-  font-size: 0.95rem;
-  color: var(--color-text);
-  line-height: 1.5;
-}
-
-.salon-info-prices li {
-  margin-bottom: 0.25rem;
-}
-
-.salon-info-cta {
-  margin: 0;
-  font-size: 0.92rem;
-  color: var(--color-hint);
-  line-height: 1.45;
-}
-
-.salon-info-cta a {
-  color: var(--color-blue);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-}
-
-.salon-info-cta a:hover {
-  color: var(--color-navy);
 }
 
 /* Status */
@@ -844,28 +809,30 @@ textarea.field-invalid {
 }
 
 .footer-partner {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 1.1rem 1.35rem;
-  margin-top: 0.25rem;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.25rem 0 0 auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  line-height: 0;
 }
 
 .footer-partner a {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   line-height: 0;
   text-decoration: none;
+  background: var(--color-white);
+  padding: 0.4rem 0.65rem;
+  border-radius: 0;
 }
 
 .footer-partner img {
   display: block;
-  width: auto;
-  max-width: min(100%, 240px);
+  width: 200px;
+  max-width: 100%;
   height: auto;
 }
 
@@ -923,6 +890,19 @@ textarea.field-invalid {
     margin-bottom: 1.5rem;
   }
 
+  .partner-top {
+    margin: 0 0 0.35rem auto;
+    padding: 0;
+  }
+
+  .partner-top a {
+    padding: 0.35rem 0.55rem;
+  }
+
+  .partner-top img {
+    width: 170px;
+  }
+
   .hero-action,
   .hero-flyer {
     top: 0.75rem;
@@ -942,16 +922,21 @@ textarea.field-invalid {
   }
 
   .hero-offline-hint {
-    font-size: 0.85rem;
-  }
-
-  .salon-info {
-    padding: 1.1rem 1rem 1.15rem;
+    font-size: 0.82rem;
+    white-space: normal;
   }
 
   .footer-partner {
-    justify-content: center;
-    padding: 1rem 1.15rem;
+    margin: 0.25rem 0 0 auto;
+    padding: 0;
+  }
+
+  .footer-partner a {
+    padding: 0.35rem 0.55rem;
+  }
+
+  .footer-partner img {
+    width: 170px;
   }
 
   .field-grid {
