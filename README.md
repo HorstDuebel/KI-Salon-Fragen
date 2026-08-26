@@ -2,13 +2,15 @@
 
 Statische Webseite für den Interviewbogen von Susanne Volkwein und Frank Vullhorst. Interessierte füllen den Bogen im Browser aus; Eingaben werden lokal zwischengespeichert und beim Absenden über **Netlify Forms** gespeichert.
 
-**Formularversion:** 2.2.0 (Stand PDF 26-07-21, Terminfindung 2026-08-11)
+**Formularversion:** 2.2.0 (PDFs Stand 2026-08-25, Terminfindung & Flyer aktualisiert)
 
 ## Papierversion (PDF)
 
 Alternativ zum Online-Fragebogen kann der Bogen als PDF heruntergeladen, handschriftlich ausgefüllt und in Papierform übergeben werden (`assets/KI-Salon_Fragebogen.pdf`). Der Download-Link steht im Hinweistext unter dem Intro auf der Startseite.
 
-Die Terminübersicht mit Kalenderwochen steht separat als `assets/KI-Salon_Termine.pdf` (Download im Abschnitt „Terminfindung“ am Ende des Fragebogens).
+Die Terminübersicht mit Kalenderwochen steht separat als `assets/KI-Salon_Termine.pdf` (Download im Abschnitt „Terminfindung“). Der aktuelle Flyer liegt unter `assets/KI-Salon_Flyer.pdf`.
+
+Partnerlogo „powered by Atelier Löwentor“: `assets/powered-by-atelier-loewentor.png` (Footer, Link zu https://www.loewentor.de/).
 
 ## Dateien
 
