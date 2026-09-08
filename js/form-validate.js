@@ -114,7 +114,7 @@ var FormValidate = (function () {
       markInvalid(terminFieldset);
       return {
         ok: false,
-        message: "Bitte wähle deinen bevorzugten Wochentag für die 6 Sessions.",
+        message: "Bitte wähle den Wochentag, der für Dich am besten passt.",
         focusEl: terminFieldset
       };
     }

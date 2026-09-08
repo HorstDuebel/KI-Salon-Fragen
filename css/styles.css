@@ -177,6 +177,45 @@ body {
   color: var(--color-white);
 }
 
+/* Was Du mitnimmst */
+.benefit-section {
+  margin-bottom: 1.75rem;
+}
+
+.benefit-section .section-eyebrow {
+  margin-bottom: 0.85rem;
+}
+
+.benefit-lead {
+  margin: 0 0 0.85rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.4;
+}
+
+.benefit-list {
+  margin: 0 0 0.9rem;
+  padding-left: 1.2rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.benefit-list li {
+  margin-bottom: 0.4rem;
+}
+
+.benefit-list li:last-child {
+  margin-bottom: 0;
+}
+
+.benefit-note {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-hint);
+  line-height: 1.45;
+}
+
 /* Status */
 .form-status {
   margin: 0 0 1.25rem;
