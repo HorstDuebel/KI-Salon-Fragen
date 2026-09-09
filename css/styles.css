@@ -216,6 +216,24 @@ body {
   line-height: 1.45;
 }
 
+.benefit-motto {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--color-navy);
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.benefit-casting {
+  margin: 1.1rem 0 0;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--color-hint);
+  line-height: 1.4;
+  text-align: right;
+}
+
 /* Status */
 .form-status {
   margin: 0 0 1.25rem;
