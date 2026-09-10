@@ -3,7 +3,7 @@
  * Meta + flaches answers-Objekt mit stabilen Feld-IDs.
  */
 var FormCollect = (function () {
-  var FORM_VERSION = "2.2.0";
+  var FORM_VERSION = "2.3.0";
 
   var TEXT_FIELDS = [
     "vorname",

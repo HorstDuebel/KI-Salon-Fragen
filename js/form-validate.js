@@ -47,7 +47,7 @@ var FormValidate = (function () {
         markInvalid(el);
         return {
           ok: false,
-          message: "Bitte fülle das Pflichtfeld „" + item.label + "“ aus.",
+          message: "Bitte füllen Sie das Pflichtfeld „" + item.label + "“ aus.",
           focusEl: el
         };
       }
@@ -56,7 +56,7 @@ var FormValidate = (function () {
         markInvalid(el);
         return {
           ok: false,
-          message: "Bitte gib eine gültige E-Mail-Adresse ein.",
+          message: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
           focusEl: el
         };
       }
@@ -69,7 +69,7 @@ var FormValidate = (function () {
         markInvalid(kiAnders);
         return {
           ok: false,
-          message: "Bitte gib an, was Du unter „etwas ganz anderes“ meinst.",
+          message: "Bitte geben Sie an, was Sie unter „etwas ganz anderes“ meinen.",
           focusEl: kiAnders
         };
       }
@@ -93,7 +93,7 @@ var FormValidate = (function () {
         markInvalid(prozesse);
         return {
           ok: false,
-          message: "Bitte gib an, in welchen Prozessen KI bereits eingesetzt wird.",
+          message: "Bitte geben Sie an, in welchen Prozessen KI bereits eingesetzt wird.",
           focusEl: prozesse
         };
       }
@@ -114,7 +114,7 @@ var FormValidate = (function () {
       markInvalid(terminFieldset);
       return {
         ok: false,
-        message: "Bitte wähle den Wochentag, der für Dich am besten passt.",
+        message: "Bitte wählen Sie den Wochentag, der für Sie am besten passt.",
         focusEl: terminFieldset
       };
     }
@@ -123,7 +123,7 @@ var FormValidate = (function () {
     if (!ds || !ds.checked) {
       return {
         ok: false,
-        message: "Bitte bestätige die Datenschutzvereinbarung.",
+        message: "Bitte bestätigen Sie die Datenschutzvereinbarung.",
         focusEl: ds
       };
     }
