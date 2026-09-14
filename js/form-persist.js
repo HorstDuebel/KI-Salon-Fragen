@@ -3,7 +3,7 @@
  * Key ist versionsiert, damit alte Entwürfe bei Schema-Änderungen ignoriert werden können.
  */
 var FormPersist = (function () {
-  var STORAGE_KEY = "ki-salon-fragebogen-v2.3";
+  var STORAGE_KEY = "ki-salon-fragebogen-v2.4";
   var DEBOUNCE_MS = 400;
   var formEl = null;
   var timer = null;

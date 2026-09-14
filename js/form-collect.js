@@ -3,7 +3,7 @@
  * Meta + flaches answers-Objekt mit stabilen Feld-IDs.
  */
 var FormCollect = (function () {
-  var FORM_VERSION = "2.3.0";
+  var FORM_VERSION = "2.4.0";
 
   var TEXT_FIELDS = [
     "vorname",
@@ -27,6 +27,7 @@ var FormCollect = (function () {
     "erfahrung_formate",
     "passung_ambivalenz",
     "passung_meinungen",
+    "aufmerksam_geworden",
     "sonstiges",
     "datenschutz_zeitpunkt"
   ];
