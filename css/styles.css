@@ -97,19 +97,32 @@ body {
   top: 1rem;
   right: 1rem;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.05rem;
   min-height: 40px;
-  padding: 0.4rem 1.1rem;
+  padding: 0.45rem 1.15rem;
   border-radius: 999px;
   background: var(--color-box-mid);
   color: var(--color-navy);
   font-weight: 700;
-  font-size: 0.95rem;
-  font-style: italic;
+  font-size: 0.9rem;
+  font-style: normal;
   text-decoration: none;
-  line-height: 1;
+  text-align: center;
+  line-height: 1.15;
   transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.hero-flyer-line {
+  display: block;
+}
+
+.hero-flyer-sub {
+  display: block;
+  font-weight: 600;
+  font-size: 0.78rem;
 }
 
 .hero-action:hover,
@@ -125,7 +138,7 @@ body {
 
 .hero-brand {
   margin: 0 0 0.35rem;
-  padding-right: 5.5rem;
+  padding-right: 10.5rem;
   font-size: clamp(1.85rem, 5vw, 2.35rem);
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -134,7 +147,7 @@ body {
 
 .hero-tagline {
   margin: 0 0 0.85rem;
-  padding-right: 5.5rem;
+  padding-right: 10.5rem;
   font-size: clamp(1rem, 2.5vw, 1.12rem);
   font-weight: 400;
   font-style: italic;
@@ -1034,16 +1047,20 @@ textarea.field-invalid {
     top: 0.75rem;
     right: 0.75rem;
     min-height: 36px;
-    padding: 0.35rem 0.9rem;
-    font-size: 0.88rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-flyer-sub {
+    font-size: 0.7rem;
   }
 
   .hero-brand {
-    padding-right: 4.75rem;
+    padding-right: 9rem;
   }
 
   .hero-tagline {
-    padding-right: 4.75rem;
+    padding-right: 9rem;
     font-size: 0.95rem;
   }
 
