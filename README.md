@@ -82,7 +82,9 @@ FormSubmit.submitAnswers(payload)  // → Promise
 | `passung_oeffnen` | ja, eher_ja, eher_nein, nein |
 | `skala_vertraulichkeit` | 1–10 |
 | `verbindlich_6_monate`, `praesenz_darmstadt` | ja/nein |
-| `termin_wochentag` | montag, mittwoch, donnerstag |
+| `termin_zusagen` | ja, einschraenkungen |
+| `termin_einschraenkungen` | Freitext bei einschraenkungen |
+| `aufmerksam_geworden` | Wie aufmerksam geworden |
 | `sonstiges` | Sonstiges |
 | `datenschutz_einwilligung`, `datenschutz_zeitpunkt` | Einwilligung |
 

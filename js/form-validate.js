@@ -8,7 +8,7 @@ var FormValidate = (function () {
     { name: "email", label: "Email" },
     { name: "unternehmen_branche", label: "Unternehmen / Branche" },
     { name: "strasse", label: "Straße" },
-    { name: "plz_wohnort", label: "PLZ und Wohnort" },
+    { name: "plz_wohnort", label: "PLZ / Wohnsitz" },
     { name: "land", label: "Land" }
   ];
 
@@ -99,24 +99,38 @@ var FormValidate = (function () {
       }
     }
 
-    var terminWochentag = form.elements.namedItem("termin_wochentag");
-    var terminSelected = false;
-    if (terminWochentag && typeof terminWochentag.length === "number") {
-      for (var t = 0; t < terminWochentag.length; t++) {
-        if (terminWochentag[t].checked) {
-          terminSelected = true;
+    var terminZusagen = form.elements.namedItem("termin_zusagen");
+    var terminSelected = "";
+    if (terminZusagen && typeof terminZusagen.length === "number") {
+      for (var t = 0; t < terminZusagen.length; t++) {
+        if (terminZusagen[t].checked) {
+          terminSelected = terminZusagen[t].value;
           break;
         }
       }
     }
     if (!terminSelected) {
-      var terminFieldset = form.querySelector('input[name="termin_wochentag"]');
+      var terminFieldset = form.querySelector('input[name="termin_zusagen"]');
       markInvalid(terminFieldset);
       return {
         ok: false,
-        message: "Bitte wählen Sie den Wochentag, der für Sie am besten passt.",
+        message: "Bitte geben Sie an, ob Sie die sechs Termine verbindlich einplanen können.",
         focusEl: terminFieldset
       };
+    }
+    if (terminSelected === "einschraenkungen") {
+      var einschraenkungen = form.elements.namedItem("termin_einschraenkungen");
+      var einschraenkungenValue = einschraenkungen && einschraenkungen.value
+        ? String(einschraenkungen.value).trim()
+        : "";
+      if (!einschraenkungenValue) {
+        markInvalid(einschraenkungen);
+        return {
+          ok: false,
+          message: "Bitte nennen Sie die Termine, bei denen Sie Einschränkungen haben.",
+          focusEl: einschraenkungen
+        };
+      }
     }
 
     var ds = form.elements.namedItem("datenschutz_einwilligung");

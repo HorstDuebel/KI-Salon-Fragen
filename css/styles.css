@@ -535,8 +535,77 @@ textarea.field-invalid {
   margin-bottom: 2.25rem;
 }
 
+.termin-dates-block {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 1.1rem;
+}
+
 .termin-intro {
   margin-top: 0;
+  margin-bottom: 0.55rem;
+}
+
+.termin-schedule {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem 1.75rem;
+  width: 100%;
+  margin: 0;
+}
+
+.termin-date-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 0 1 auto;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.termin-date-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.termin-date-num {
+  flex: 0 0 1.25rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.termin-timeline-figure {
+  margin: 0;
+  flex: 0 0 auto;
+  align-self: flex-start;
+}
+
+.termin-timeline-figure img {
+  display: block;
+  width: 11rem;
+  max-width: 36vw;
+  height: auto;
+}
+
+.termin-capacity {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.termin-capacity-list {
+  margin: 0 0 0.25rem;
+  padding-left: 1.15rem;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.termin-capacity-list li {
+  margin-bottom: 0.25rem;
 }
 
 .termin-table-wrap {
@@ -1002,6 +1071,21 @@ textarea.field-invalid {
 
   .field-span-2 {
     grid-column: 1;
+  }
+
+  .termin-dates-block {
+    width: 100%;
+  }
+
+  .termin-schedule {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .termin-timeline-figure img {
+    width: min(100%, 12rem);
+    max-width: none;
   }
 
   .termin-table {

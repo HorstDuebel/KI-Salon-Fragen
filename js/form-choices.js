@@ -43,15 +43,20 @@ var FormChoices = (function () {
 
     form.addEventListener("change", function (event) {
       var el = event.target;
-      if (!el || !el.getAttribute || !el.getAttribute("data-target")) return;
-      syncPair(form, el, true);
+      if (!el) return;
 
       if (el.type === "radio" && el.name) {
         var group = form.querySelectorAll('input[type="radio"][name="' + el.name + '"][data-target]');
-        for (var i = 0; i < group.length; i++) {
-          if (group[i] !== el) syncPair(form, group[i], false);
+        if (group.length) {
+          for (var i = 0; i < group.length; i++) {
+            syncPair(form, group[i], group[i] === el && isActive(group[i]));
+          }
+          return;
         }
       }
+
+      if (!el.getAttribute || !el.getAttribute("data-target")) return;
+      syncPair(form, el, true);
     });
   }
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KI-Salon – Interviewbogen für Interessierte</title>
+  <title>KI-Salon – Ihre Teilnahmeanfrage</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -30,11 +30,15 @@
       >Flyer</a>
       <p class="hero-brand">KI-Salon</p>
       <p class="hero-tagline">Klarheit statt Dauer-KI-Rauschen.</p>
-      <h1 class="hero-title">Interviewbogen für Interessierte</h1>
+      <h1 class="hero-title">Ihre Teilnahmeanfrage</h1>
       <p class="hero-intro">
-        Wir führen den kuratierten KI-Salon ein. Ein festes, vertrauliches Gesprächsformat für Menschen in Verantwortung.
-        Wir freuen uns über Ihr Interesse und möchten Sie näher kennenlernen,
-        damit wir eine Gruppe zusammenstellen können, die zueinander passt und in der sich jeder öffnen kann.
+        Bitte füllen Sie diesen Fragebogen nur aus, wenn Sie konkret am KI-Salon teilnehmen möchten.
+        Ihre Antworten helfen uns, eine Gruppe zusammenzustellen, in der unterschiedliche
+        Erfahrungen, Perspektiven und Fragestellungen gut zusammenwirken.
+      </p>
+      <p class="hero-intro">
+        Mit dem Absenden fragen Sie einen Platz im KI-Salon an. Die Teilnahme kommt erst zustande,
+        wenn wir Ihnen Ihren Platz persönlich per E-Mail bestätigen.
       </p>
       <p class="hero-offline-hint">
         <strong>Lieber offline?</strong> Sie können den Fragebogen als <a href="assets/KI-Salon_Fragebogen.pdf" download="KI-Salon_Fragebogen.pdf">PDF</a> herunterladen, handschriftlich ausfüllen und&nbsp;uns&nbsp;schicken.
@@ -43,7 +47,7 @@
 
     <section class="section benefit-section" aria-labelledby="sec-nutzen">
       <h2 id="sec-nutzen" class="section-eyebrow">Was Sie mitnehmen</h2>
-      <p class="benefit-lead">Ein Podcast gibt Ihnen Wissen. Der KI-Salon gibt Ihnen dazu Haltung, belastbare Standpunkte und Sicherheit.</p>
+      <p class="benefit-lead">Ein Podcast gibt Ihnen Wissen.<br>Der KI-Salon gibt Ihnen dazu Haltung, belastbare Standpunkte und Sicherheit.</p>
       <ul class="benefit-list">
         <li>Klare Sprache für KI-Gespräche, intern wie extern.</li>
         <li>Fundierte Einordnung Ihrer konkreten Herausforderungen.</li>
@@ -95,6 +99,18 @@
             <label for="unternehmen_branche">Unternehmen / Branche <span class="required" aria-hidden="true">*</span></label>
             <input type="text" id="unternehmen_branche" name="unternehmen_branche" required aria-required="true">
           </div>
+          <div class="field field-span-2">
+            <label for="strasse">Straße <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="strasse" name="strasse" required aria-required="true" autocomplete="street-address">
+          </div>
+          <div class="field">
+            <label for="plz_wohnort">PLZ / Wohnsitz <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="plz_wohnort" name="plz_wohnort" required aria-required="true" autocomplete="address-level2">
+          </div>
+          <div class="field">
+            <label for="land">Land <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="land" name="land" required aria-required="true" autocomplete="country-name">
+          </div>
           <div class="field">
             <label for="website">Website</label>
             <input type="text" id="website" name="website" inputmode="url" placeholder="https://…">
@@ -102,22 +118,6 @@
           <div class="field">
             <label for="linkedin">LinkedIn</label>
             <input type="text" id="linkedin" name="linkedin" inputmode="url" placeholder="https://…">
-          </div>
-        </div>
-
-        <p class="billing-label">[ Rechnungsadresse ]</p>
-        <div class="field-grid">
-          <div class="field field-span-2">
-            <label for="strasse">Straße <span class="required" aria-hidden="true">*</span></label>
-            <input type="text" id="strasse" name="strasse" required aria-required="true" autocomplete="street-address">
-          </div>
-          <div class="field">
-            <label for="plz_wohnort">PLZ und Wohnort <span class="required" aria-hidden="true">*</span></label>
-            <input type="text" id="plz_wohnort" name="plz_wohnort" required aria-required="true" autocomplete="address-level2">
-          </div>
-          <div class="field">
-            <label for="land">Land <span class="required" aria-hidden="true">*</span></label>
-            <input type="text" id="land" name="land" required aria-required="true" autocomplete="country-name">
           </div>
         </div>
       </section>
@@ -343,38 +343,53 @@
       <!-- TERMINE -->
       <section class="section termin-section" aria-labelledby="sec-termin">
         <h2 id="sec-termin" class="section-eyebrow">Termine</h2>
-        <p class="hint termin-intro">
-          Wir sind gerade mitten in der Neuaufstellung der Gruppe.
-        </p>
-        <p class="hint">
-          Der Ablauf bleibt: sechs Monate, sechs Sessions, je 90 Minuten, in Präsenz im Atelier
-          Löwentor in Darmstadt, mindestens viermal vor Ort, zweimal online möglich.
-        </p>
-        <p class="hint">
-          Den genauen Starttermin legen wir gerade neu fest, weil uns die richtige
-          Zusammensetzung der Gruppe wichtiger ist als ein Datum. Sagen Sie uns trotzdem gern, welcher
-          Wochentag für Sie am besten passt, das hilft uns bei der Planung:
-        </p>
+        <div class="termin-dates-block">
+          <p class="hint termin-intro">
+            Der KI-Salon findet an sechs Donnerstagabenden von Januar bis Mai 2027 statt:
+          </p>
+          <div class="termin-schedule">
+            <ol class="termin-date-list">
+              <li><span class="termin-date-num">1</span> 21. Januar 2027</li>
+              <li><span class="termin-date-num">2</span> 11. Februar 2027</li>
+              <li><span class="termin-date-num">3</span> 4. März 2027</li>
+              <li><span class="termin-date-num">4</span> 8. April 2027</li>
+              <li><span class="termin-date-num">5</span> 29. April 2027</li>
+              <li><span class="termin-date-num">6</span> 13. Mai 2027</li>
+            </ol>
+            <figure class="termin-timeline-figure">
+              <img
+                src="assets/KI-Salon_ZeitlicherAblauf2.png"
+                alt="Zeitlicher Ablauf: 18:40 Ankommen, 19:00 Start, 20:30 Ende, 21:00 Ausklang"
+                width="1057"
+                height="1148"
+              >
+            </figure>
+          </div>
+        </div>
+        <p class="hint">Der KI-Salon findet im Atelier Löwentor in Darmstadt statt.</p>
 
         <fieldset class="field">
-          <legend class="visually-hidden">Welcher Wochentag passt am besten? <span class="required" aria-hidden="true">*</span></legend>
-          <div class="choice-list choice-list-inline">
+          <legend>Können Sie diese sechs Termine verbindlich einplanen? <span class="required" aria-hidden="true">*</span></legend>
+          <div class="choice-list">
             <label class="choice">
-              <input type="radio" name="termin_wochentag" value="montag" required aria-required="true">
-              <span>Montag</span>
+              <input type="radio" name="termin_zusagen" value="ja" required aria-required="true">
+              <span>Ja, die Termine passen für mich.</span>
             </label>
-            <label class="choice">
-              <input type="radio" name="termin_wochentag" value="mittwoch">
-              <span>Mittwoch</span>
-            </label>
-            <label class="choice">
-              <input type="radio" name="termin_wochentag" value="donnerstag">
-              <span>Donnerstag</span>
+            <label class="choice choice-with-input">
+              <input type="radio" name="termin_zusagen" value="einschraenkungen" data-target="termin_einschraenkungen">
+              <span class="choice-input-row">
+                <span class="choice-input-label">Grundsätzlich ja. Bei folgenden Terminen habe ich Einschränkungen:</span>
+                <input type="text" id="termin_einschraenkungen" name="termin_einschraenkungen" class="choice-input" disabled tabindex="-1" aria-label="Termine mit Einschränkungen" placeholder=" ">
+              </span>
             </label>
           </div>
         </fieldset>
 
-        <p class="hint termin-deadline">Wir melden uns bei Ihnen, sobald der Start feststeht.</p>
+        <p class="hint termin-capacity">Der KI-Salon ist auf zehn Menschen begrenzt.</p>
+        <ul class="termin-capacity-list">
+          <li>Sobald die Gruppe vollständig ist, schließen wir die Anmeldung.</li>
+          <li>Nach Eingang Ihres Teilnahmewunsches melden wir uns persönlich bei Ihnen.</li>
+        </ul>
       </section>
 
       <!-- DATENSCHUTZ -->
@@ -397,17 +412,17 @@
       </section>
 
       <div class="submit-row">
-        <p class="closing-hint">Die Gruppe formt sich gerade, wir freuen uns über jede Anmeldung.</p>
+        <p class="closing-hint">Nach Eingang Ihres Teilnahmewunsches melden wir uns persönlich bei Ihnen.</p>
         <button type="submit" class="btn-submit" id="submit-btn">Fragebogen absenden</button>
       </div>
     </form>
 
     <section id="success" class="success-box" hidden>
       <h2 class="success-title">Geschafft!</h2>
-      <p class="success-text">Dankeschön für Ihren Input.</p>
-      <p class="success-text">Ihre Terminpräferenz wurde mit übermittelt.</p>
+      <p class="success-text">Dankeschön für Ihren Teilnahmewunsch.</p>
+      <p class="success-text">Ihre Angaben und Terminzusagen wurden übermittelt.</p>
       <p class="success-text">
-        Wir melden uns bei Ihnen, sobald der Start feststeht.
+        Nach Eingang Ihres Teilnahmewunsches melden wir uns persönlich bei Ihnen.
         Wenn Sie zwischendurch Fragen haben, melden Sie sich gern bei uns.
       </p>
     </section>
