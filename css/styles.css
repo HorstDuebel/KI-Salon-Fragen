@@ -554,25 +554,38 @@ textarea.field-invalid {
   margin: 0 0 1.1rem;
 }
 
-.termin-intro {
-  margin-top: 0;
-  margin-bottom: 0.55rem;
+.termin-schedule {
+  display: grid;
+  grid-template-columns: auto 1px auto;
+  column-gap: 1.15rem;
+  align-items: start;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
 }
 
-.termin-schedule {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1.25rem 1.75rem;
-  width: 100%;
-  margin: 0;
+.termin-schedule-dates {
+  min-width: 0;
+  padding-right: 4.25rem;
+}
+
+.termin-intro {
+  margin: 0 0 0.55rem;
+  line-height: 1.4;
+}
+
+.termin-schedule-divider {
+  width: 1px;
+  align-self: stretch;
+  background: #8b7fa8;
+  opacity: 0.85;
+  min-height: 100%;
 }
 
 .termin-date-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  flex: 0 1 auto;
   display: grid;
   gap: 0.35rem;
 }
@@ -594,8 +607,7 @@ textarea.field-invalid {
 
 .termin-timeline-figure {
   margin: 0;
-  flex: 0 0 auto;
-  align-self: flex-start;
+  align-self: start;
 }
 
 .termin-timeline-figure img {
@@ -1094,10 +1106,18 @@ textarea.field-invalid {
     width: 100%;
   }
 
+  .termin-schedule-dates {
+    padding-right: 0;
+  }
+
   .termin-schedule {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    width: 100%;
+  }
+
+  .termin-schedule-divider {
+    display: none;
   }
 
   .termin-timeline-figure img {
